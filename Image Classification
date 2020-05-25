@@ -12,7 +12,7 @@ data = pd.read_csv("mnist.csv")
 data.head()
 
 #extracting data from the dataset and viewing them 
-z =data.ioc[3,1:].values
+z =data.iloc[3,1:].values
 #reshaping the extracted data in to reasonable size
 z = z.reshape(28,28).stype("uist8")
 plt.imshow(z)
