@@ -38,12 +38,12 @@ y_pred = rf.predict(x_test)
 y_pred
 
 # check predictions accuracy
-s = y_test.values
+B = y_test.values
 
 #calculating number of correctly predicted values
 count = 0
 for i in range(len(pred)):
-    if y_pred[i] == s[i]:
+    if y_pred[i] == B[i]:
         count = count+1
 count
 
