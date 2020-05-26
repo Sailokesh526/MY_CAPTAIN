@@ -1,10 +1,11 @@
+
 #importing dependencies
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-testplotlib inline
+%matplotlib inline
 
 #using pandas to read database stored in the folder
 data = pd.read_csv("mnist.csv")
@@ -42,7 +43,7 @@ B = y_test.values
 
 #calculating number of correctly predicted values
 count = 0
-for i in range(len(pred)):
+for i in range(len(y_pred)):
     if y_pred[i] == B[i]:
         count = count+1
 count
