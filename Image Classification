@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.Cross_Validation import train_test_split
+from sklearn.model_selection import train_test_split
 testplotlib inline
 
 #using pandas to read database stored in the folder
@@ -12,10 +12,10 @@ data = pd.read_csv("mnist.csv")
 data.head()
 
 #extracting data from the dataset and viewing them 
-z =data.iloc[3,1:].values
+a =data.iloc[3,1:].values
 #reshaping the extracted data in to reasonable size
-z = z.reshape(28,28).stype("uist8")
-plt.imshow(z)
+a = a.reshape(28,28).astype("uint8")
+plt.imshow(a)
 
 #preparing  the data
 #separating labels and data values
@@ -30,12 +30,12 @@ y_train.head()
 
 #calling RF classifer
 rf = RandomForestClassifier(n_estimators=100)
-#fit the data
+#fitting the data
 rf.fit(x_train,y_train)
 
 #predictions on the test data
-pred = rf.predict(x_test)
-pred
+y_pred = rf.predict(x_test)
+y_pred
 
 # check predictions accuracy
 s = y_test.values
@@ -43,12 +43,12 @@ s = y_test.values
 #calculating number of correctly predicted values
 count = 0
 for i in range(len(pred)):
-    if pred[i] == s[i]:
+    if y_pred[i] == s[i]:
         count = count+1
 count
 
 #total values of predictions
-len(pred)
+len(y_pred)
 
 #accuracy value
 8090/8400
